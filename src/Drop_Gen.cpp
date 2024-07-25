@@ -13,7 +13,6 @@ void Generator::dgSetup(){
   pinMode(param.DIR_A,    OUTPUT);
   pinMode(param.DIR_B,    OUTPUT);
   pinMode(param.TRIG,     OUTPUT);
-  pinMode(param.RES_ENDSTOP, INPUT_PULLDOWN);
   digitalWrite(param.LED, HIGH);
 }
 
@@ -24,7 +23,7 @@ void Generator::dgStart(){
     noInterrupts();
     generate();
     interrupts();
-    // if(param.camera) camera();
+    if(param.camera) camera();
   }
   delay(param.dropDelay);
 }
@@ -32,7 +31,7 @@ void Generator::dgStart(){
 void Generator::camera(){
   delay(param.delayTime);
   GPIO.out_w1ts = TRIGGER;
-  delayMicroseconds(6);
+  delayMicroseconds(50);
   GPIO.out_w1tc = TRIGGER;
 }
 

@@ -6,22 +6,12 @@
 // Initializing the motors
 AccelStepper resStep(AccelStepper::DRIVER, param.RES_STEP, param.RES_DIR);
 
-volatile bool stopRes = false;
 volatile int remember_pos = false;
-
-void IRAM_ATTR resStalled(){
-  Serial.print("End Stop Triggered");
-  if(digitalRead(param.RES_ENDSTOP) == LOW){
-    resStep.setAcceleration(200000);
-    resStep.moveTo(param.resMotPos);
-    resStep.setAcceleration(param.ACCEL);
-    stopRes = true;
-  }
-}
 
 extern WifiClass wifiCont;
 
 void Motor::stop() {
+    emergencyStop = true;
     if(resStep.isRunning()) {
       resStep.stop();
       isStopping = true; // Set the stopping flag
@@ -32,7 +22,7 @@ void Motor::updateMotorStatus() {
     if (isStopping && !resStep.isRunning()) {
         isStopping = false; // Reset the stopping flag
         param.resMotPos = resStep.currentPosition();
-        param.resMotPos = param.resMotPos / 1280;
+        param.resMotPos = param.resMotPos / param.LEAD_SIZE; 
         wifiCont.update(true);
     }
 }
@@ -40,62 +30,70 @@ void Motor::updateMotorStatus() {
 void Motor::reset(){
   if(resStep.isRunning()){
     resStep.stop();
-  } 
-  param.resMotPos = 0;
-  resStep.setCurrentPosition(param.resMotPos);
+  }
+  emergencyStop = false;
+  param.resMotPos = 0; // reset position in millimeters stored in this class
+  resStep.setCurrentPosition(0); // reset position in stepps in accelStepper class
 }
 
 // This function sets up the motor acceleration, position, and speed
 void Motor::motorSetup(){
 
   resStep.setMaxSpeed(param.SPEED);
+  resStep.setSpeed(param.SPEED);
   resStep.setAcceleration(param.ACCEL);
   resStep.setCurrentPosition(param.resMotPos);
-  // attachInterrupt(digitalPinToInterrupt(param.RES_ENDSTOP),
-                                    //      resStalled, FALLING);
+  // initialize the motor endstop pin
+  pinMode(param.RES_ENDSTOP, INPUT_PULLDOWN);
+
 }
 
-// This function runs the motors
-void Motor::runMotor(){
-  if(param.calibrate) calibrate();
-  resStep.run();
+void Motor::moveBegin(){
+  if(!resStep.isRunning() || emergencyStop) return;
+  while(resStep.isRunning() && !emergencyStop){
+    resStep.run();
+  }
 }
 
-void Motor::move(int dir, int motor){
-  switch(motor) {
-    default: // Generator Motor
-      calculateDist(param.resMotPos, resStep, dir);
-      break;
-    }
-}
-
-void Motor::calculateDist(double& motorPos, AccelStepper& stepper, int dir) {
-  if(!stepper.isRunning()){
-    motorPos += param.travelLength * dir;
-    stepper.moveTo(motorPos * param.LEAD_SIZE);
+void Motor::moveRelative(int dir, int motor){
+if(!resStep.isRunning()){
+    param.resMotPos += param.travelLength * dir;
+    resStep.moveTo(param.resMotPos * param.LEAD_SIZE);
+    moveBegin();
   }
 }
 
 void Motor::moveToAbsolute(){
-  if(!resStep.isRunning()) resStep.moveTo(param.resMotPos * param.LEAD_SIZE);
+  if(!resStep.isRunning()){
+    resStep.moveTo(param.resMotPos * param.LEAD_SIZE);
+    moveBegin();
+  } 
 }
 
 
 void Motor::calibrate(){
-  Serial.println("in calibrate");
+  Serial.println("Begin motor homeing sequence");
   resStep.setSpeed(param.CALIB_SPEED);
-  //param.resMotPos+=param.LEAD_SIZE;
+  //resStep.setAcceleration(20000);
   delay(100);
+
+  // Run motor at constant speed until endstop is reached
   while(digitalRead(param.RES_ENDSTOP)){
     resStep.runSpeed();
-    // delay(100);
-    // Serial.println("in loop");
   }
+  resStep.stop();
+  // while(resStep.isRunning()){
+  //   resStep.run();
+  // }
+
+  // Reset position to 0 when endstop is triggered 
   Serial.println("endstop detected");
-  param.resMotPos = 0;
-  resStep.setCurrentPosition(0);
+  // param.resMotPos = 0;
+  // resStep.setCurrentPosition(0);
   param.calibrate = false;
-//    stopRes = false;
+  emergencyStop = false;
+  resStep.setSpeed(param.SPEED);
+  reset();
 
 }
 
@@ -105,7 +103,8 @@ void Motor::lock(){
 
 void Motor::return_to(){
     if (resStep.currentPosition() != remember_pos){
-       resStep.moveTo(remember_pos);
-       param.resMotPos = remember_pos/1280;
+      param.resMotPos = remember_pos/param.LEAD_SIZE;
+      resStep.moveTo(remember_pos);
+      moveBegin();
     }
 }

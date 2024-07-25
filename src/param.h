@@ -25,10 +25,10 @@ struct Param {
     const int RES_ENDSTOP = 3;         // Reservoir mechanical end stop pin
 
     // Drop generator parameters
-    int pulseWidth       = 1000;       // Piezo pulse width
-    int dropDelay        = 500;        // Time between droplets
+    int pulseWidth       = 1000;       // Piezo pulse width in microseconds
+    int dropDelay        = 500;        // Time between droplets in milliseconds
     int dropNum          = 100;        // Number of droplets
-    int delayTime        = 15;         // Camera delay
+    int delayTime        = 15;         // Camera delay from drop pulse end in milliseconds
     volatile bool camera = false;      // Camera on/off
     volatile bool drop   = false;      // Droplet generator on/off
     
@@ -36,11 +36,10 @@ struct Param {
     bool calibrate       = false;      // Calibrate the motors
     double resMotPos     = 0.0;        // Reservoir motor position
     double travelLength  = 1;          // Motor travel length (mm)
-    int SPEED            = 3200;       // Motor speed
-    int CALIB_SPEED      = 1000;       // Calibration Motor speed
-    int ACCEL            = 3200;       // Motor acceleration
+    int SPEED            = 5000;       // Motor speed
+    int CALIB_SPEED      = 2000;       // Calibration Motor speed
+    int ACCEL            = 4000;       // Motor acceleration
     int LEAD_SIZE        = 1280;       // Motor round size (steps / mm)
-    int DIAG_THRESHOLD   = 50;         // Auto home over-current threshold
 
     void loadParameters(Preferences &pref){
       pulseWidth       = pref.getInt("PW", pulseWidth);

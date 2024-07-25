@@ -9,18 +9,18 @@ class Motor{
   // Functions that are used by other controllers
     void motorSetup();
     void calibrate();
-    void runMotor();
     void stop();
     void reset();
-    void move(int, int);
+    void moveRelative(int, int);
     void moveToAbsolute();
+    void moveBegin();
     void lock();
     void return_to();
     void updateMotorStatus();
 
   private:
-    void calculateDist(double&, AccelStepper&, int);
     bool isStopping = false;
+    bool emergencyStop = false;
 };
 
 #endif

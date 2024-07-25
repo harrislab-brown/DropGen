@@ -1,4 +1,5 @@
 #include <WiFi.h>
+#include <esp_wifi.h>
 #include <sstream>
 #include <ESPmDNS.h>
 #include <WebServer.h>
@@ -20,7 +21,6 @@ WifiClass wifiCont;
 
 // Main page for server and captures values sent by server
 void WifiClass::wfRun(Motor& motor) {
-  motor.runMotor();
   server.handleClient();                         
   webSocket.loop();
   if(sendData) update(true);
@@ -70,6 +70,7 @@ void WifiClass::wfSetup(Motor& motor, Generator& generator) {
     while(WiFi.status() != WL_CONNECTED){delay(1000); Serial.println("Connecting...");}
     Serial.print("Ip Address: ");
     Serial.println(WiFi.localIP());
+    readMacAddress();
   } else {
     WiFi.softAP(param.SSID, param.PASSWORD);
     delay(100);           // WiFi Setup Delay
@@ -114,8 +115,8 @@ void WifiClass::setupServer(Motor& motor, Generator& generator){
   server.on("/database.js", HTTP_GET, [this]() {handleFile((char*)"/database.js", (char*)"text/javascript");});
 
   // Functions
-  server.on("/resUP",    [&motor, this]() {motor.move( 1, 1); update(true);});
-  server.on("/resDOWN",  [&motor, this]() {motor.move(-1, 1); update(true);});
+  server.on("/resUP",    [&motor, this]() {motor.moveRelative( 1, 1); update(true);});
+  server.on("/resDOWN",  [&motor, this]() {motor.moveRelative(-1, 1); update(true);});
   server.on("/stop",     [&motor, this]() {motor.stop(); update(false);});
   server.on("/reset",    [&motor, this]() {motor.reset(); update(true);});
   server.on("/go",       [&motor, this]() {motor.moveToAbsolute(); update(true);});
@@ -126,6 +127,17 @@ void WifiClass::setupServer(Motor& motor, Generator& generator){
   server.on("/camera",   [&motor, this]() {param.camera = !param.camera; update(true);});
 }
 
+void WifiClass::readMacAddress(){
+  uint8_t baseMac[6];
+  esp_err_t ret = esp_wifi_get_mac(WIFI_IF_STA, baseMac);
+  if (ret == ESP_OK) {
+    Serial.printf("%02x:%02x:%02x:%02x:%02x:%02x\n",
+                  baseMac[0], baseMac[1], baseMac[2],
+                  baseMac[3], baseMac[4], baseMac[5]);
+  } else {
+    Serial.println("Failed to read MAC address");
+  }
+}
 
 // Send necessary extension files saved in SPIFFS memory to server
 void WifiClass::handleFile(char* name, char* type){

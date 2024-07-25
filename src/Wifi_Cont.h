@@ -17,6 +17,7 @@ class WifiClass{
   private:
     void setupServer(Motor &, Generator& generator);
     void handleFile(char*, char*);
+    void readMacAddress();
 };
 
 // Declare wifiCont as an extern variable

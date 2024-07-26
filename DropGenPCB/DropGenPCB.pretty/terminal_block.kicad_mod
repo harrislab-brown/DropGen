@@ -1,0 +1,230 @@
+(footprint "terminal_block"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 -0.5 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "c7c1525f-bf1a-4245-9b27-69f3cc9c8af7")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Value" "terminal_block"
+		(at 0.1016 18.4912 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "d11568af-8e46-476b-aa31-0ec0eb3f38bf")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Footprint" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "3e229197-2e3e-4d79-aaff-be573d419306")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "e2bced42-ed99-4d23-a31f-5e68141b88d7")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "afceda62-2ac6-49fd-959c-024ac7bc323f")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_line
+		(start -5.5372 1.4986)
+		(end -5.5372 16.4986)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "08825b70-e995-4da0-8bff-2acc7e13bf34")
+	)
+	(fp_line
+		(start -5.5372 1.4986)
+		(end 5.4628 1.4986)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "bccd5939-c4aa-485b-b675-0c96d1c9ad6d")
+	)
+	(fp_line
+		(start -5.5372 16.4986)
+		(end 5.4628 16.4986)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "bcd82740-fed6-4373-9b80-bee8a7e4e77f")
+	)
+	(fp_line
+		(start 5.4628 1.4986)
+		(end 5.4628 16.4986)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "75d43406-1ca2-4145-8f19-20187ab3e6b3")
+	)
+	(fp_rect
+		(start -6.0564 1.0688)
+		(end 5.9436 17.0688)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(fill none)
+		(layer "F.CrtYd")
+		(uuid "a8690155-35b7-4164-bbaf-c4a48456ee5b")
+	)
+	(fp_circle
+		(center -5.6672 16.6286)
+		(end -5.6372 16.6286)
+		(stroke
+			(width 0.06)
+			(type solid)
+		)
+		(fill none)
+		(layer "F.Fab")
+		(uuid "cf2bedb9-1b37-4269-8322-02af1af33851")
+	)
+	(fp_circle
+		(center -2.5372 6.4986)
+		(end -2.2372 6.4986)
+		(stroke
+			(width 0.6)
+			(type solid)
+		)
+		(fill none)
+		(layer "F.Fab")
+		(uuid "8554eec5-549c-408f-8638-43ace52a293e")
+	)
+	(fp_circle
+		(center -2.5372 11.4986)
+		(end -2.2372 11.4986)
+		(stroke
+			(width 0.6)
+			(type solid)
+		)
+		(fill none)
+		(layer "F.Fab")
+		(uuid "7e3a5b50-71a3-4e16-bc43-c290f08df387")
+	)
+	(fp_circle
+		(center 2.4628 6.4986)
+		(end 2.7628 6.4986)
+		(stroke
+			(width 0.6)
+			(type solid)
+		)
+		(fill none)
+		(layer "F.Fab")
+		(uuid "d71ae0cb-62bb-4a27-99c5-376247cf51f2")
+	)
+	(fp_circle
+		(center 2.4628 11.4986)
+		(end 2.7628 11.4986)
+		(stroke
+			(width 0.6)
+			(type solid)
+		)
+		(fill none)
+		(layer "F.Fab")
+		(uuid "52fa4183-8745-43ae-af07-f979d595dde9")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0.0254 20.5486 0)
+		(layer "F.SilkS")
+		(uuid "b8c400eb-5e93-4082-bf7c-64bd1da0be63")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole rect
+		(at -2.5372 6.4986)
+		(size 2.5 2.5)
+		(drill 1.399997)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "e4c70825-ebab-45f6-89f3-f48401105fd9")
+	)
+	(pad "1" thru_hole rect
+		(at -2.5372 11.4986)
+		(size 2.5 2.5)
+		(drill 1.399997)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "ed823bd0-68a5-4acd-a936-57f45e77cbb1")
+	)
+	(pad "2" thru_hole circle
+		(at 2.4628 6.4986)
+		(size 2.5 2.5)
+		(drill 1.399997)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "1d84908e-b84f-4cc1-8f4d-5c6289b3d6c1")
+	)
+	(pad "2" thru_hole circle
+		(at 2.4628 11.4986)
+		(size 2.5 2.5)
+		(drill 1.399997)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "6dc2e8ec-ac10-4ef1-a4d4-4b5490b22533")
+	)
+	(model "${KIPRJMOD}/DropGenPCB.pretty/2_pin_terminal_block.step"
+		(offset
+			(xyz -5 -9 6.5)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

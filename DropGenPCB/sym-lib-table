@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "DropGenPCB")(type "KiCad")(uri "${KIPRJMOD}/DropGenPCB.kicad_sym")(options "")(descr ""))
+)

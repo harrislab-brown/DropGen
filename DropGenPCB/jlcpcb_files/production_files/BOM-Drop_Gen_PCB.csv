@@ -1,5 +1,5 @@
 Comment,Designator,Footprint,LCSC
-10KΩ T,R1,R_0402_1005Metric_Pad0.72x0.64mm_HandSolder,C106225
+10KΩ T,R1,Resistor_SMD:R_0402_1005Metric,C258091
 10nF,C3,C_0805_2012Metric,C128911
 JST_3_pin,J1,3_pin_jst,C161860
 JST_4_pin,J2,4_pin_jst,C161861

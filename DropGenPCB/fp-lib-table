@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "DropGeneratorPCB")(type "KiCad")(uri "${KIPRJMOD}/DropGenPCB.pretty")(options "")(descr ""))
+)

@@ -70,7 +70,6 @@ void Motor::moveToAbsolute(){
   } 
 }
 
-
 void Motor::calibrate(){
   Serial.println("Begin motor homeing sequence");
   resStep.setSpeed(param.CALIB_SPEED);

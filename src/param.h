@@ -28,7 +28,7 @@ struct Param {
     int pulseWidth       = 1000;       // Piezo pulse width in microseconds
     int dropDelay        = 500;        // Time between droplets in milliseconds
     int dropNum          = 100;        // Number of droplets
-    int delayTime        = 15;         // Camera delay from drop pulse end in milliseconds
+    int cameraDelay        = 15;         // Camera delay from drop pulse end in milliseconds
     volatile bool camera = false;      // Camera on/off
     volatile bool drop   = false;      // Droplet generator on/off
     
@@ -46,7 +46,7 @@ struct Param {
       dropDelay        = pref.getInt("DD", dropDelay);
       dropNum          = pref.getInt("DN", dropNum);
       travelLength     = pref.getInt("TL", travelLength);
-      delayTime        = pref.getInt("DT", delayTime);
+      cameraDelay        = pref.getInt("DT", cameraDelay);
       resMotPos        = pref.getInt("RMP", resMotPos);
     }
 };

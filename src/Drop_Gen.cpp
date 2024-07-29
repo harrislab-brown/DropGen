@@ -18,18 +18,35 @@ void Generator::dgSetup(){
 
 // piezodisk trigger with camera function
 void Generator::dgStart(){
-  if(param.drop){
+  int drop_index = 0;
+  while(drop_index < param.dropNum && param.drop){
     Serial.println(*pulsewidth);
     noInterrupts();
     generate();
     interrupts();
-    if(param.camera) camera();
+    drop_index ++;
+
+    int delayTime = param.dropDelay;
+    if(param.camera){
+     camera();
+     delayTime -= param.cameraDelay;
+    }
+    delay(delayTime);
+    
   }
-  delay(param.dropDelay);
+  param.drop = false;
+
+  // if(param.drop){
+  //   Serial.println(*pulsewidth);
+  //   noInterrupts();
+  //   generate();
+  //   interrupts();
+  //   if(param.camera) camera();
+  // }
 }
 
 void Generator::camera(){
-  delay(param.delayTime);
+  delay(param.cameraDelay);
   GPIO.out_w1ts = TRIGGER;
   delayMicroseconds(50);
   GPIO.out_w1tc = TRIGGER;

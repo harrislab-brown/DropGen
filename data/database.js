@@ -14,8 +14,9 @@ window.onload = function(event){
 
 function updateDrops(){
   var dropNum = document.getElementById('dpnum').innerHTML;
-  dropNum = parseInt(dropNum.innerHTML, 10) - 1;
+  dropNum = parseInt(dropNum, 10) - 1;
   dropsLeft--;
+  console.log(dropsLeft);
 }
 
 function calculateTime(isGo){
@@ -103,7 +104,7 @@ function receive_data(event) {
   if(toggleGen.innerHTML === 'On') {
     if(intervalID === null){
       dropsLeft = myArray[3];
-      setInterval(updateDrops, parseInt((dropDelay) + 10), dropNum);
+      setInterval(updateDrops, parseInt((dropDelay) + 10) );
     }
   } else if (dropsLeft <= 0 || toggleGen.innerHTML === 'Off'){
     if(intervalID !== null){

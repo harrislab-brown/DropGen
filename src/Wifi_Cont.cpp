@@ -50,7 +50,7 @@ void webSocketEvent(byte num, WStype_t type, uint8_t* payload, size_t length) {
           token = strtok(NULL, "p");                       // Motor travel length
           param.travelLength = atof(token);
           token = strtok(NULL, "p");                       // Camera delay
-          param.delayTime = atoi(token);
+          param.cameraDelay = atoi(token);
           token = strtok(NULL, "p");                       // Reservoir motor position
           param.resMotPos = atof(token);
         }
@@ -95,7 +95,7 @@ void WifiClass::update(bool textUpdate){
         << ' ' << param.dropDelay
         << ' ' << param.dropNum
         << ' ' << param.travelLength
-        << ' ' << param.delayTime
+        << ' ' << param.cameraDelay
         << ' ' << param.resMotPos;
     webSocket.broadcastTXT(oss.str().c_str());
     server.send(200, "text/plain", "");

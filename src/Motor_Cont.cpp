@@ -81,18 +81,12 @@ void Motor::calibrate(){
   while(digitalRead(param.RES_ENDSTOP)){
     resStep.runSpeed();
   }
-  resStep.stop();
-  // while(resStep.isRunning()){
-  //   resStep.run();
-  // }
-
-  // Reset position to 0 when endstop is triggered 
   Serial.println("endstop detected");
-  // param.resMotPos = 0;
-  // resStep.setCurrentPosition(0);
+
   param.calibrate = false;
   emergencyStop = false;
   resStep.setSpeed(param.SPEED);
+  // zero motor to current position
   reset();
 
 }

@@ -15,11 +15,11 @@ struct Param {
     // Drop generator pin definitions
     const int DIR_A      = 5;          // Piezo PWN pin 1
     const int DIR_B      = 4;          // Piezo PWN pin 2
-    const int TRIG       = 6;          // Camera trigger
+    const int TRIG       = 9;          // Camera trigger
     const int LED        = 21;         // BUILTIN_LED
 
     // Motor pin definitions
-    const int RES_DIAG    = 9;         // Reservoir motor diagnostic pin
+    // const int RES_DIAG    = 9;         // Reservoir motor diagnostic pin
     const int RES_STEP    = 7;         // Reservoir motor step pin
     const int RES_DIR     = 8;         // Reservoir motor direction pin
     const int RES_ENDSTOP = 3;         // Reservoir mechanical end stop pin

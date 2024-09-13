@@ -8,8 +8,8 @@ struct Param {
     
     // Wifi definitions.
     const bool WIFI_STATION = true;    // True for external WiFi connection
-    const char* SSID        = "Brown-Guest";
-    const char* PASSWORD    = "";
+    const char* SSID        = "YOUR_NETWORK_NAME";
+    const char* PASSWORD    = "YOUR_NETWORK_PASSWORD";
     const char* DNS_NAME    = "dropgen";
     
     // Drop generator pin definitions

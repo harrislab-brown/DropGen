@@ -24,4 +24,9 @@ DropGen is controlled by a web based GUI running on an ESP32-S3 development boar
 ### Documentation: 
 This directory contains image and video assets used in the wiki. 
 
+### Credit: 
+If you use or adapt the device for academic publication, please cite this repository as well as the preceding works:
+* N. Ionkin and D. M. Harris.  Note: A versatile 3D-printed droplet-on-demand generator. Review of Scientific Instruments. 2018; 89 (11) : 116103. [doi.org/10.1063/1.5054400](doi.org/10.1063/1.5054400)
+* D. M. Harris, T. Liu and J. W. M. Bush. A low-cost, precise piezoelectric droplet-on-demand generator. Experiments in Fluids. 2015; 56 (4). [dx.doi.org/10.1007/s00348-015-1950-6](dx.doi.org/10.1007/s00348-015-1950-6)
+
 Happy building! 

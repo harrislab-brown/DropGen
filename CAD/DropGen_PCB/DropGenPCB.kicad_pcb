@@ -1,7 +1,7 @@
 (kicad_pcb
-	(version 20240108)
+	(version 20241229)
 	(generator "pcbnew")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(general
 		(thickness 1.6)
 		(legacy_teardrops no)
@@ -9,41 +9,42 @@
 	(paper "A4")
 	(layers
 		(0 "F.Cu" signal)
-		(31 "B.Cu" signal)
-		(32 "B.Adhes" user "B.Adhesive")
-		(33 "F.Adhes" user "F.Adhesive")
-		(34 "B.Paste" user)
-		(35 "F.Paste" user)
-		(36 "B.SilkS" user "B.Silkscreen")
-		(37 "F.SilkS" user "F.Silkscreen")
-		(38 "B.Mask" user)
-		(39 "F.Mask" user)
-		(40 "Dwgs.User" user "User.Drawings")
-		(41 "Cmts.User" user "User.Comments")
-		(42 "Eco1.User" user "User.Eco1")
-		(43 "Eco2.User" user "User.Eco2")
-		(44 "Edge.Cuts" user)
-		(45 "Margin" user)
-		(46 "B.CrtYd" user "B.Courtyard")
-		(47 "F.CrtYd" user "F.Courtyard")
-		(48 "B.Fab" user)
-		(49 "F.Fab" user)
-		(50 "User.1" user)
-		(51 "User.2" user)
-		(52 "User.3" user)
-		(53 "User.4" user)
-		(54 "User.5" user)
-		(55 "User.6" user)
-		(56 "User.7" user)
-		(57 "User.8" user)
-		(58 "User.9" user)
+		(2 "B.Cu" signal)
+		(9 "F.Adhes" user "F.Adhesive")
+		(11 "B.Adhes" user "B.Adhesive")
+		(13 "F.Paste" user)
+		(15 "B.Paste" user)
+		(5 "F.SilkS" user "F.Silkscreen")
+		(7 "B.SilkS" user "B.Silkscreen")
+		(1 "F.Mask" user)
+		(3 "B.Mask" user)
+		(17 "Dwgs.User" user "User.Drawings")
+		(19 "Cmts.User" user "User.Comments")
+		(21 "Eco1.User" user "User.Eco1")
+		(23 "Eco2.User" user "User.Eco2")
+		(25 "Edge.Cuts" user)
+		(27 "Margin" user)
+		(31 "F.CrtYd" user "F.Courtyard")
+		(29 "B.CrtYd" user "B.Courtyard")
+		(35 "F.Fab" user)
+		(33 "B.Fab" user)
+		(39 "User.1" user)
+		(41 "User.2" user)
+		(43 "User.3" user)
+		(45 "User.4" user)
+		(47 "User.5" user)
+		(49 "User.6" user)
+		(51 "User.7" user)
+		(53 "User.8" user)
+		(55 "User.9" user)
 	)
 	(setup
 		(pad_to_mask_clearance 0)
 		(allow_soldermask_bridges_in_footprints no)
+		(tenting front back)
 		(pcbplotparams
-			(layerselection 0x00010fc_ffffffff)
-			(plot_on_all_layers_selection 0x0000000_00000000)
+			(layerselection 0x00000000_00000000_55555555_5755f5ff)
+			(plot_on_all_layers_selection 0x00000000_00000000_00000000_00000000)
 			(disableapertmacros no)
 			(usegerberextensions no)
 			(usegerberattributes yes)
@@ -53,7 +54,6 @@
 			(dashed_line_gap_ratio 3.000000)
 			(svgprecision 4)
 			(plotframeref no)
-			(viasonmask no)
 			(mode 1)
 			(useauxorigin no)
 			(hpglpennumber 1)
@@ -61,16 +61,19 @@
 			(hpglpendiameter 15.000000)
 			(pdf_front_fp_property_popups yes)
 			(pdf_back_fp_property_popups yes)
+			(pdf_metadata yes)
+			(pdf_single_document no)
 			(dxfpolygonmode yes)
 			(dxfimperialunits yes)
 			(dxfusepcbnewfont yes)
 			(psnegative no)
 			(psa4output no)
-			(plotreference yes)
-			(plotvalue yes)
-			(plotfptext yes)
-			(plotinvisibletext no)
+			(plot_black_and_white yes)
 			(sketchpadsonfab no)
+			(plotpadnumbers no)
+			(hidednponfab no)
+			(sketchdnponfab yes)
+			(crossoutdnponfab yes)
 			(subtractmaskfromsilk no)
 			(outputformat 1)
 			(mirror no)
@@ -133,23 +136,10 @@
 			)
 		)
 		(property "Value" "SEEED XIAO ESP32S3"
-			(at 4.2926 2.667 -90)
+			(at 4.2926 2.667 270)
 			(unlocked yes)
 			(layer "F.SilkS")
 			(uuid "4b766cab-f612-4cf4-b26e-d8070a00a1e7")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Footprint" "DropGeneratorPCB:ESP32S3"
-			(at -0.254 12.954 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "0777afb9-b7b4-4659-95c6-1c04fc5d5db7")
 			(effects
 				(font
 					(size 1 1)
@@ -197,9 +187,9 @@
 			)
 		)
 		(path "/5d38e000-f61b-4280-81dc-1e1b9f56ffda")
-		(sheetname "Root")
-		(sheetfile "Drop_Gen_PCB.kicad_sch")
-		(attr smd)
+		(sheetname "/")
+		(sheetfile "DropGenPCB.kicad_sch")
+		(attr smd exclude_from_bom dnp)
 		(fp_line
 			(start 8.21 -3.026)
 			(end 8.21 12.274)
@@ -327,7 +317,7 @@
 				(width 0.1)
 				(type default)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.SilkS")
 			(uuid "aeb0525d-f7da-4bdd-89b8-46b2eabfaa4b")
 		)
@@ -338,7 +328,7 @@
 				(width 0.1)
 				(type default)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.SilkS")
 			(uuid "773d5bce-9bf6-4eb6-ad44-e89a100ff9bb")
 		)
@@ -349,7 +339,7 @@
 				(width 0.05)
 				(type default)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.CrtYd")
 			(uuid "64f5f454-43fb-4e87-ae2f-697c1bbddb4f")
 		)
@@ -619,6 +609,7 @@
 			(pintype "power_in")
 			(uuid "9c469a83-8e23-4634-8d21-c6802581d1b8")
 		)
+		(embedded_fonts no)
 	)
 	(footprint "DropGeneratorPCB:MC2209 numbers"
 		(layer "F.Cu")
@@ -643,19 +634,6 @@
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "d3f9dff7-7969-464e-a88a-8406d68b5daf")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Footprint" "DropGeneratorPCB:MC2209 numbers"
-			(at 0.7112 -7.6802 90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "cefe6c4d-ceae-4fc4-b606-6e60685c0b46")
 			(effects
 				(font
 					(size 1 1)
@@ -703,9 +681,9 @@
 			)
 		)
 		(path "/8b558cf4-b572-43cd-afad-76fc787dd14e")
-		(sheetname "Root")
-		(sheetfile "Drop_Gen_PCB.kicad_sch")
-		(attr smd)
+		(sheetname "/")
+		(sheetfile "DropGenPCB.kicad_sch")
+		(attr smd exclude_from_bom dnp)
 		(fp_line
 			(start 14.957 0.1212)
 			(end 14.957 1.4512)
@@ -853,7 +831,7 @@
 				(width 0.1)
 				(type default)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.SilkS")
 			(uuid "11ddf6a5-7b9d-4c7a-b120-64aaa841f1ee")
 		)
@@ -1267,6 +1245,7 @@
 			(pintype "input")
 			(uuid "16ade8b9-b459-4b8e-9ee3-6dd12166adb7")
 		)
+		(embedded_fonts no)
 	)
 	(footprint "Capacitor_SMD:C_0805_2012Metric"
 		(layer "F.Cu")
@@ -1292,19 +1271,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 0 0 90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "8022bcae-195f-4190-83cb-dc8bfa3a9594")
-			(effects
-				(font
-					(size 1.27 1.27)
 					(thickness 0.15)
 				)
 			)
@@ -1363,8 +1329,8 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/43058ab5-4ef5-4d1b-aa47-66a3c7991199")
-		(sheetname "Root")
-		(sheetfile "Drop_Gen_PCB.kicad_sch")
+		(sheetname "/")
+		(sheetfile "DropGenPCB.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.261252 -0.735)
@@ -1480,7 +1446,7 @@
 		(pad "1" smd roundrect
 			(at -0.95 0 90)
 			(size 1 1.45)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net 2 "/PH")
 			(pintype "passive")
@@ -1489,12 +1455,13 @@
 		(pad "2" smd roundrect
 			(at 0.95 0 90)
 			(size 1 1.45)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net 6 "/Boot")
 			(pintype "passive")
 			(uuid "19f4e76c-7447-4fc5-8b0d-d5af4b2ab949")
 		)
+		(embedded_fonts no)
 		(model "${KIPRJMOD}/DropGenPCB.pretty/boot_capacitor.step"
 			(offset
 				(xyz 0 -0.5 0)
@@ -1536,19 +1503,6 @@
 				)
 			)
 		)
-		(property "Footprint" "DropGeneratorPCB:terminal_block"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "0631e610-eca5-468f-8ed2-d840d632feb8")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Ningbo-Xinlaiya-Elec--XY115A-5-0-2P_C784935.pdf"
 			(at 0 0 180)
 			(unlocked yes)
@@ -1562,7 +1516,7 @@
 				)
 			)
 		)
-		(property "Description" " 2.5 5mm 12~28 1x2P 15A 2P 300V Gray 2 1 Plugin,P=5mm Spring Clamp System Terminal Block ROHS"
+		(property "Description" "2.5 5mm 12~28 1x2P 15A 2P 300V Gray 2 1 Plugin,P=5mm Spring Clamp System Terminal Block ROHS"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -1603,8 +1557,8 @@
 		)
 		(property ki_fp_filters "TerminalBlock*:*")
 		(path "/e0d76638-9d47-418e-8bf5-f3f133d07172")
-		(sheetname "Root")
-		(sheetfile "Drop_Gen_PCB.kicad_sch")
+		(sheetname "/")
+		(sheetfile "DropGenPCB.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start 5.4628 1.4986)
@@ -1653,7 +1607,7 @@
 				(width 0.05)
 				(type default)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.CrtYd")
 			(uuid "225eba67-9aca-4fca-95ea-306b80e60b8b")
 		)
@@ -1664,7 +1618,7 @@
 				(width 0.6)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.Fab")
 			(uuid "a7feb4be-ebe0-495c-b722-7b16aae044b0")
 		)
@@ -1675,7 +1629,7 @@
 				(width 0.6)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.Fab")
 			(uuid "c68eb18f-bdab-4d02-8d0c-be3241369a39")
 		)
@@ -1686,7 +1640,7 @@
 				(width 0.6)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.Fab")
 			(uuid "9a2ddf91-5bd5-4931-80aa-d663c99f03b2")
 		)
@@ -1697,7 +1651,7 @@
 				(width 0.6)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.Fab")
 			(uuid "86408bbe-ee43-49e4-a780-07a366aa5897")
 		)
@@ -1708,7 +1662,7 @@
 				(width 0.06)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.Fab")
 			(uuid "456dc3eb-f8d7-4d5d-8b94-2abf63361eb8")
 		)
@@ -1767,6 +1721,7 @@
 			(pintype "passive")
 			(uuid "b063e73f-4171-4dbf-9c99-a930d90ffe62")
 		)
+		(embedded_fonts no)
 		(model "${KIPRJMOD}/DropGenPCB.pretty/2_pin_terminal_block.step"
 			(offset
 				(xyz -5 -9 6.5)
@@ -1809,19 +1764,6 @@
 				)
 			)
 		)
-		(property "Footprint" "DropGeneratorPCB:terminal_block"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "478f9674-705b-49c4-9217-659455eebd38")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Ningbo-Xinlaiya-Elec--XY115A-5-0-2P_C784935.pdf"
 			(at 0 0 180)
 			(unlocked yes)
@@ -1835,7 +1777,7 @@
 				)
 			)
 		)
-		(property "Description" " 2.5 5mm 12~28 1x2P 15A 2P 300V Gray 2 1 Plugin,P=5mm Spring Clamp System Terminal Block ROHS"
+		(property "Description" "2.5 5mm 12~28 1x2P 15A 2P 300V Gray 2 1 Plugin,P=5mm Spring Clamp System Terminal Block ROHS"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -1876,8 +1818,8 @@
 		)
 		(property ki_fp_filters "TerminalBlock*:*")
 		(path "/166a5c3b-3f8a-4408-9a4b-e42234d2b391")
-		(sheetname "Root")
-		(sheetfile "Drop_Gen_PCB.kicad_sch")
+		(sheetname "/")
+		(sheetfile "DropGenPCB.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start 5.4628 1.4986)
@@ -1926,7 +1868,7 @@
 				(width 0.05)
 				(type default)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.CrtYd")
 			(uuid "3a83d85b-f654-43b8-a4e9-202350841a3c")
 		)
@@ -1937,7 +1879,7 @@
 				(width 0.6)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.Fab")
 			(uuid "868771a9-3cf9-437b-a97b-d6b587ea5246")
 		)
@@ -1948,7 +1890,7 @@
 				(width 0.6)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.Fab")
 			(uuid "2868ac52-2199-4c14-acdc-1675bfbc2cc0")
 		)
@@ -1959,7 +1901,7 @@
 				(width 0.6)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.Fab")
 			(uuid "23f47503-2653-4e85-ae27-2a21e11157cd")
 		)
@@ -1970,7 +1912,7 @@
 				(width 0.6)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.Fab")
 			(uuid "a8a7256c-f733-4a91-a32a-966270bc6674")
 		)
@@ -1981,7 +1923,7 @@
 				(width 0.06)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.Fab")
 			(uuid "39e2df5a-11e4-4670-ab38-7fa2756043ac")
 		)
@@ -2040,6 +1982,7 @@
 			(pintype "passive")
 			(uuid "676c528b-df97-4414-9331-bb54f8af666b")
 		)
+		(embedded_fonts no)
 		(model "${KIPRJMOD}/DropGenPCB.pretty/2_pin_terminal_block.step"
 			(offset
 				(xyz -5 -9 6.5)
@@ -2076,19 +2019,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Footprint" "LED_SMD:LED_0603_1608Metric"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "50ed94ca-8c03-4387-a931-dd2872b71940")
-			(effects
-				(font
-					(size 1.27 1.27)
 					(thickness 0.15)
 				)
 			)
@@ -2147,8 +2077,8 @@
 		)
 		(property ki_fp_filters "LED* LED_SMD:* LED_THT:*")
 		(path "/310cf43d-c649-4f06-9cf9-d2988e22fd2b")
-		(sheetname "Root")
-		(sheetfile "Drop_Gen_PCB.kicad_sch")
+		(sheetname "/")
+		(sheetfile "DropGenPCB.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start 0.8 -0.735)
@@ -2284,7 +2214,7 @@
 		(pad "1" smd roundrect
 			(at -0.7875 0 180)
 			(size 0.875 0.95)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net 1 "GND")
 			(pinfunction "K")
@@ -2294,13 +2224,14 @@
 		(pad "2" smd roundrect
 			(at 0.7875 0 180)
 			(size 0.875 0.95)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net 35 "Net-(D2-A)")
 			(pinfunction "A")
 			(pintype "passive")
 			(uuid "827c70f2-738b-4903-af07-7f634b2080fc")
 		)
+		(embedded_fonts no)
 		(model "${KICAD8_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0603_1608Metric.wrl"
 			(offset
 				(xyz 0 0 0)
@@ -2342,20 +2273,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_DIN965_Pad"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "4631b86c-ad90-434d-9d0e-14dce96f7268")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -2383,8 +2301,8 @@
 		)
 		(property ki_fp_filters "MountingHole*Pad*")
 		(path "/b494bf05-14c6-4293-9444-e0b773194acb")
-		(sheetname "Root")
-		(sheetfile "Drop_Gen_PCB.kicad_sch")
+		(sheetname "/")
+		(sheetfile "DropGenPCB.kicad_sch")
 		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
 			(center 0 0)
@@ -2393,7 +2311,7 @@
 				(width 0.15)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "Cmts.User")
 			(uuid "c1657548-3481-42e9-9dd7-4157e0a2ab86")
 		)
@@ -2404,7 +2322,7 @@
 				(width 0.05)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.CrtYd")
 			(uuid "4cc66352-99b1-4803-bde4-d3880b473d82")
 		)
@@ -2430,6 +2348,7 @@
 			(pintype "input")
 			(uuid "64d0bfae-f3b8-4616-b74d-33e0650659dd")
 		)
+		(embedded_fonts no)
 	)
 	(footprint "Capacitor_Tantalum_SMD:CP_EIA-6032-15_Kemet-U"
 		(layer "F.Cu")
@@ -2455,19 +2374,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_Tantalum_SMD:CP_EIA-6032-15_Kemet-U"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "522d67ad-3adc-4564-bae5-73bf0cc63d41")
-			(effects
-				(font
-					(size 1.27 1.27)
 					(thickness 0.15)
 				)
 			)
@@ -2526,8 +2432,8 @@
 		)
 		(property ki_fp_filters "CP_*")
 		(path "/78e5864e-2a18-48cf-a005-1c8f28f71b8d")
-		(sheetname "Root")
-		(sheetfile "Drop_Gen_PCB.kicad_sch")
+		(sheetname "/")
+		(sheetfile "DropGenPCB.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start 3 -1.71)
@@ -2663,7 +2569,7 @@
 		(pad "1" smd roundrect
 			(at -2.4625 0 180)
 			(size 2.075 2.35)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.120482)
 			(net 8 "+5V")
 			(pintype "passive")
@@ -2672,12 +2578,13 @@
 		(pad "2" smd roundrect
 			(at 2.4625 0 180)
 			(size 2.075 2.35)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.120482)
 			(net 1 "GND")
 			(pintype "passive")
 			(uuid "bbad0a5b-ef5f-493a-b786-2911a84a0d95")
 		)
+		(embedded_fonts no)
 		(model "${KIPRJMOD}/DropGenPCB.pretty/pol_capacitor.step"
 			(offset
 				(xyz 0 0 0)
@@ -2712,19 +2619,6 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(uuid "955574e8-947b-401c-9779-9a296ca18228")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Footprint" "DropGeneratorPCB:4_pin_jst"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "afd85e51-7626-481e-91a6-0a0fdbbe47dc")
 			(effects
 				(font
 					(size 1 1)
@@ -2785,8 +2679,8 @@
 			)
 		)
 		(path "/31d0dc23-68ce-4211-9a3d-539c0469ca12")
-		(sheetname "Root")
-		(sheetfile "Drop_Gen_PCB.kicad_sch")
+		(sheetname "/")
+		(sheetfile "DropGenPCB.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -7.3644 5.6872)
@@ -2905,7 +2799,7 @@
 				(width 0.4)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "Cmts.User")
 			(uuid "200ce353-5d1e-44ff-992f-0596efb127bc")
 		)
@@ -2916,7 +2810,7 @@
 				(width 0.06)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.Fab")
 			(uuid "d6cc989c-c8df-4842-b274-27640a2fe60a")
 		)
@@ -2935,7 +2829,7 @@
 		(pad "1" smd rect
 			(at -3.6144 2.6872)
 			(size 1.3 4.5)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net 32 "Net-(U2-M2B)")
 			(pinfunction "1")
 			(pintype "input")
@@ -2944,7 +2838,7 @@
 		(pad "2" smd rect
 			(at -1.1144 2.6872)
 			(size 1.3 4.5)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net 33 "Net-(U2-M1B)")
 			(pinfunction "2")
 			(pintype "input")
@@ -2953,7 +2847,7 @@
 		(pad "3" smd rect
 			(at 1.3856 2.6872)
 			(size 1.3 4.5)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net 31 "Net-(U2-M1A)")
 			(pinfunction "3")
 			(pintype "input")
@@ -2962,7 +2856,7 @@
 		(pad "4" smd rect
 			(at 3.8856 2.6872)
 			(size 1.3 4.5)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net 34 "Net-(U2-M2A)")
 			(pinfunction "4")
 			(pintype "input")
@@ -2971,7 +2865,7 @@
 		(pad "5" smd rect
 			(at 7.2356 9.6872)
 			(size 3 4.5)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net 1 "GND")
 			(pinfunction "5")
 			(pintype "input")
@@ -2980,12 +2874,13 @@
 		(pad "6" smd rect
 			(at -6.9644 9.6872)
 			(size 3 4.5)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net 1 "GND")
 			(pinfunction "6")
 			(pintype "input")
 			(uuid "3b063335-b48a-4413-99c5-de6cdc8a6f15")
 		)
+		(embedded_fonts no)
 		(model "${KIPRJMOD}/DropGenPCB.pretty/4_pin_jst.step"
 			(offset
 				(xyz 0 -7.5 0)
@@ -3022,19 +2917,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "b0d9ab85-546c-4a1c-8889-43c57b3d3bdb")
-			(effects
-				(font
-					(size 1.27 1.27)
 					(thickness 0.15)
 				)
 			)
@@ -3093,8 +2975,8 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/e306dd82-2245-4f1d-9e98-ec9e71b372d8")
-		(sheetname "Root")
-		(sheetfile "Drop_Gen_PCB.kicad_sch")
+		(sheetname "/")
+		(sheetfile "DropGenPCB.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.237258 0.5225)
@@ -3210,7 +3092,7 @@
 		(pad "1" smd roundrect
 			(at -0.825 0 180)
 			(size 0.8 0.95)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net 8 "+5V")
 			(pintype "passive")
@@ -3219,12 +3101,13 @@
 		(pad "2" smd roundrect
 			(at 0.825 0 180)
 			(size 0.8 0.95)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net 35 "Net-(D2-A)")
 			(pintype "passive")
 			(uuid "dbaa5786-4702-4460-a8cc-32313d42ce52")
 		)
+		(embedded_fonts no)
 		(model "${KICAD8_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
 			(offset
 				(xyz 0 0 0)
@@ -3265,21 +3148,8 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_1210_3225Metric"
-			(at 0 0 -90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "0339aab8-9fb6-443a-91da-f8a22c863d8e")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2308151448_Samwha-Capacitor-CS3225X7R106K500NRL_C2918502.pdf"
-			(at 0 0 -90)
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -3292,7 +3162,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 0 0 -90)
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -3305,7 +3175,7 @@
 			)
 		)
 		(property "Manufac. Part" "CS3225X7R106K500NRL"
-			(at 0 0 -90)
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -3318,7 +3188,7 @@
 			)
 		)
 		(property "LCSC" "C2918502"
-			(at 0 0 -90)
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -3332,8 +3202,8 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/d88e800c-b2dc-40ce-8f5e-4ddb0e306c4b")
-		(sheetname "Root")
-		(sheetfile "Drop_Gen_PCB.kicad_sch")
+		(sheetname "/")
+		(sheetfile "DropGenPCB.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.711252 1.36)
@@ -3449,7 +3319,7 @@
 		(pad "1" smd roundrect
 			(at -1.475 0 270)
 			(size 1.15 2.7)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.217391)
 			(net 1 "GND")
 			(pintype "passive")
@@ -3458,12 +3328,13 @@
 		(pad "2" smd roundrect
 			(at 1.475 0 270)
 			(size 1.15 2.7)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.217391)
 			(net 30 "+30V")
 			(pintype "passive")
 			(uuid "4f9740a8-4b14-4b49-91c7-f20622d537ca")
 		)
+		(embedded_fonts no)
 		(model "${KIPRJMOD}/DropGenPCB.pretty/input_capacitor.step"
 			(offset
 				(xyz 0 0 0.45)
@@ -3505,19 +3376,6 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_BarrelJack:BarrelJack_GCT_DCJ200-10-A_Horizontal"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "09929969-71ef-45a0-8d80-105c0121c68c")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_1810201908_GANGYUAN-DC-470-2-1GP_C194407.pdf"
 			(at 0 0 0)
 			(unlocked yes)
@@ -3531,7 +3389,7 @@
 				)
 			)
 		)
-		(property "Description" " Bend insert DC Power Receptacle -40â~+55â 2.1mm 6.3mm 500mA 30V Plugin DC Power Connectors ROHS"
+		(property "Description" "Bend insert DC Power Receptacle -40℃~+55℃ 2.1mm 6.3mm 500mA 30V Plugin DC Power Connectors ROHS"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -3572,8 +3430,8 @@
 		)
 		(property ki_fp_filters "BarrelJack*")
 		(path "/d88de8dd-f76a-4d7a-bbe0-9b7c95102f9d")
-		(sheetname "Root")
-		(sheetfile "Drop_Gen_PCB.kicad_sch")
+		(sheetname "/")
+		(sheetfile "DropGenPCB.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -4.9 -1)
@@ -3826,6 +3684,7 @@
 			(pintype "passive")
 			(uuid "2a0985ea-ef2e-4634-a167-3d92a64ebaec")
 		)
+		(embedded_fonts no)
 		(model "${KIPRJMOD}/DropGenPCB.pretty/barrel_jack.step"
 			(offset
 				(xyz 0 -6 0)
@@ -3862,19 +3721,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "08da9718-6a86-4375-8195-5ec5cace3ce6")
-			(effects
-				(font
-					(size 1.27 1.27)
 					(thickness 0.15)
 				)
 			)
@@ -3933,8 +3779,8 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/a85fd6c1-ead6-4b13-98e9-4bf610b78cb5")
-		(sheetname "Root")
-		(sheetfile "Drop_Gen_PCB.kicad_sch")
+		(sheetname "/")
+		(sheetfile "DropGenPCB.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.167621 0.38)
@@ -4050,7 +3896,7 @@
 		(pad "1" smd roundrect
 			(at -0.5975 0 180)
 			(size 0.715 0.64)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net 8 "+5V")
 			(pintype "passive")
@@ -4059,12 +3905,13 @@
 		(pad "2" smd roundrect
 			(at 0.5975 0 180)
 			(size 0.715 0.64)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net 28 "/VSENSE")
 			(pintype "passive")
 			(uuid "60a63b9b-2665-439a-baf6-4dc735c95f93")
 		)
+		(embedded_fonts no)
 		(model "${KIPRJMOD}/DropGenPCB.pretty/10kO_resistor.step"
 			(offset
 				(xyz 0 0 0.4)
@@ -4105,19 +3952,6 @@
 				)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_SMC"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "89d3e463-3b51-426b-9def-e3c082255316")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Diodes-Incorporated-B560C-13-F_C85100.pdf"
 			(at 0 0 0)
 			(unlocked yes)
@@ -4131,7 +3965,7 @@
 				)
 			)
 		)
-		(property "Description" " 60V 700mV@5A 5A SMC(DO-214AB) Schottky Diodes ROHS "
+		(property "Description" "60V 700mV@5A 5A SMC(DO-214AB) Schottky Diodes ROHS"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -4172,8 +4006,8 @@
 		)
 		(property ki_fp_filters "D*SOD?523*")
 		(path "/8e419e13-df2d-4b74-b3b7-5898ceed3c53")
-		(sheetname "Root")
-		(sheetfile "Drop_Gen_PCB.kicad_sch")
+		(sheetname "/")
+		(sheetfile "DropGenPCB.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -4.91 -3.25)
@@ -4359,7 +4193,7 @@
 		(pad "1" smd roundrect
 			(at -3.4 0 90)
 			(size 3.3 2.5)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.1)
 			(net 2 "/PH")
 			(pinfunction "K")
@@ -4369,13 +4203,14 @@
 		(pad "2" smd roundrect
 			(at 3.4 0 90)
 			(size 3.3 2.5)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.1)
 			(net 1 "GND")
 			(pinfunction "A")
 			(pintype "passive")
 			(uuid "9fc81866-d5d3-4af3-94be-525bc422d4ef")
 		)
+		(embedded_fonts no)
 		(model "${KIPRJMOD}/DropGenPCB.pretty/diode.step"
 			(offset
 				(xyz 0 0 0)
@@ -4417,20 +4252,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_DIN965_Pad"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "00936cb8-9295-453e-9701-bea810dfb50a")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -4458,8 +4280,8 @@
 		)
 		(property ki_fp_filters "MountingHole*Pad*")
 		(path "/31166e62-cb5d-4a4c-8029-605c36349da9")
-		(sheetname "Root")
-		(sheetfile "Drop_Gen_PCB.kicad_sch")
+		(sheetname "/")
+		(sheetfile "DropGenPCB.kicad_sch")
 		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
 			(center 0 0)
@@ -4468,7 +4290,7 @@
 				(width 0.15)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "Cmts.User")
 			(uuid "3cdc85bf-539b-4e0c-9c97-766354c1ccd0")
 		)
@@ -4479,7 +4301,7 @@
 				(width 0.05)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.CrtYd")
 			(uuid "b6b5ca68-c1fe-480f-b6cd-b30fd032df9c")
 		)
@@ -4505,6 +4327,7 @@
 			(pintype "input")
 			(uuid "73df4a12-352c-4015-b445-c6310e25e722")
 		)
+		(embedded_fonts no)
 	)
 	(footprint "MountingHole:MountingHole_3.2mm_M3_DIN965_Pad"
 		(layer "F.Cu")
@@ -4535,20 +4358,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_DIN965_Pad"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "34ec1e5a-41e5-42ca-a3ed-7290153e9c24")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -4576,8 +4386,8 @@
 		)
 		(property ki_fp_filters "MountingHole*Pad*")
 		(path "/6aaa6a06-f358-40ad-a43a-4f3126aea776")
-		(sheetname "Root")
-		(sheetfile "Drop_Gen_PCB.kicad_sch")
+		(sheetname "/")
+		(sheetfile "DropGenPCB.kicad_sch")
 		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
 			(center 0 0)
@@ -4586,7 +4396,7 @@
 				(width 0.15)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "Cmts.User")
 			(uuid "ba7c9aac-455b-491f-8f4c-be113152747a")
 		)
@@ -4597,7 +4407,7 @@
 				(width 0.05)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.CrtYd")
 			(uuid "a8a3e71e-5fa6-49d4-ab19-ca6596d69394")
 		)
@@ -4623,6 +4433,7 @@
 			(pintype "input")
 			(uuid "524b9fd5-3e1f-4e8d-b782-3c99808ffd10")
 		)
+		(embedded_fonts no)
 	)
 	(footprint "LOGO"
 		(layer "F.Cu")
@@ -4649,18 +4460,6 @@
 				(font
 					(size 1.5 1.5)
 					(thickness 0.3)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 0 0 0)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "fb08e329-0844-40c5-9eb3-289b9ab51dc4")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
 				)
 			)
 		)
@@ -4699,7 +4498,7 @@
 				(width 0)
 				(type solid)
 			)
-			(fill solid)
+			(fill yes)
 			(layer "F.SilkS")
 			(uuid "82da4861-d7dc-41a9-ba00-6002665222ef")
 		)
@@ -4713,7 +4512,7 @@
 				(width 0)
 				(type solid)
 			)
-			(fill solid)
+			(fill yes)
 			(layer "F.SilkS")
 			(uuid "da98fc4d-b7f1-4358-aaa6-c1aa59301ec3")
 		)
@@ -4727,7 +4526,7 @@
 				(width 0)
 				(type solid)
 			)
-			(fill solid)
+			(fill yes)
 			(layer "F.SilkS")
 			(uuid "3b9619c9-18ab-45e4-83de-89aeb756b453")
 		)
@@ -4742,7 +4541,7 @@
 				(width 0)
 				(type solid)
 			)
-			(fill solid)
+			(fill yes)
 			(layer "F.SilkS")
 			(uuid "c98832af-b8a1-4eaf-8737-9072ed0959f0")
 		)
@@ -4757,7 +4556,7 @@
 				(width 0)
 				(type solid)
 			)
-			(fill solid)
+			(fill yes)
 			(layer "F.SilkS")
 			(uuid "1c756867-b685-4e4f-9fb0-8f51bfb7e320")
 		)
@@ -4777,7 +4576,7 @@
 				(width 0)
 				(type solid)
 			)
-			(fill solid)
+			(fill yes)
 			(layer "F.SilkS")
 			(uuid "1e331b2b-8a0f-4afe-b56d-75bf8b5fb496")
 		)
@@ -4805,7 +4604,7 @@
 				(width 0)
 				(type solid)
 			)
-			(fill solid)
+			(fill yes)
 			(layer "F.SilkS")
 			(uuid "a7b275fe-9e29-4e02-bdf9-3b7e2762bcf9")
 		)
@@ -4833,7 +4632,7 @@
 				(width 0)
 				(type solid)
 			)
-			(fill solid)
+			(fill yes)
 			(layer "F.SilkS")
 			(uuid "7d955277-2c35-498b-becc-e771abb272dd")
 		)
@@ -4860,7 +4659,7 @@
 				(width 0)
 				(type solid)
 			)
-			(fill solid)
+			(fill yes)
 			(layer "F.SilkS")
 			(uuid "5ee51061-690f-4806-9c70-70de38e5a82a")
 		)
@@ -4891,7 +4690,7 @@
 				(width 0)
 				(type solid)
 			)
-			(fill solid)
+			(fill yes)
 			(layer "F.SilkS")
 			(uuid "fc40c0a8-c65d-4f44-923d-4c9b0be08279")
 		)
@@ -4926,7 +4725,7 @@
 				(width 0)
 				(type solid)
 			)
-			(fill solid)
+			(fill yes)
 			(layer "F.SilkS")
 			(uuid "7f96895e-43d0-458e-a558-47aa132e3549")
 		)
@@ -4964,7 +4763,7 @@
 				(width 0)
 				(type solid)
 			)
-			(fill solid)
+			(fill yes)
 			(layer "F.SilkS")
 			(uuid "25d5020d-5fa0-4900-ba25-9a275a1db03b")
 		)
@@ -5058,10 +4857,11 @@
 				(width 0)
 				(type solid)
 			)
-			(fill solid)
+			(fill yes)
 			(layer "F.SilkS")
 			(uuid "538ffedf-bba5-45c1-bc45-41e53d552da0")
 		)
+		(embedded_fonts no)
 	)
 	(footprint "Resistor_SMD:R_0603_1608Metric"
 		(layer "F.Cu")
@@ -5087,19 +4887,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "83e2b820-71ba-43e8-82d2-7070e5c8ce01")
-			(effects
-				(font
-					(size 1.27 1.27)
 					(thickness 0.15)
 				)
 			)
@@ -5158,8 +4945,8 @@
 		)
 		(property ki_fp_filters "R_*")
 		(path "/f17c2199-89f0-4cad-9516-8cc14e925544")
-		(sheetname "Root")
-		(sheetfile "Drop_Gen_PCB.kicad_sch")
+		(sheetname "/")
+		(sheetfile "DropGenPCB.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.237258 0.5225)
@@ -5275,7 +5062,7 @@
 		(pad "1" smd roundrect
 			(at -0.825 0 180)
 			(size 0.8 0.95)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net 28 "/VSENSE")
 			(pintype "passive")
@@ -5284,12 +5071,13 @@
 		(pad "2" smd roundrect
 			(at 0.825 0 180)
 			(size 0.8 0.95)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net 1 "GND")
 			(pintype "passive")
 			(uuid "909ed981-f96c-4a4d-b40d-4df8575fe143")
 		)
+		(embedded_fonts no)
 		(model "${KIPRJMOD}/DropGenPCB.pretty/3.24kO_resistor.step"
 			(offset
 				(xyz 0 0 0)
@@ -5307,7 +5095,7 @@
 		(uuid "d37c36b1-931c-4b61-b3a4-f7c0934b6092")
 		(at 117.2626 109.4832 -90)
 		(property "Reference" "U3"
-			(at 5.8674 -1.0922 -90)
+			(at 5.8674 -1.0922 270)
 			(unlocked yes)
 			(layer "F.SilkS")
 			(hide yes)
@@ -5331,21 +5119,8 @@
 				)
 			)
 		)
-		(property "Footprint" "DropGeneratorPCB:L293D"
-			(at 4.4196 -6.6628 -90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "3046e917-00de-4802-8f14-96e48632e26b")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_1912111437_HGSEMI-L293DN_C434590.pdf"
-			(at 4.4196 -6.6628 -90)
+			(at 4.4196 -6.6628 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -5358,7 +5133,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 4.4196 -6.6628 -90)
+			(at 4.4196 -6.6628 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -5371,7 +5146,7 @@
 			)
 		)
 		(property "Manufac. Part" "L293DN"
-			(at 0 0 -90)
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -5384,7 +5159,7 @@
 			)
 		)
 		(property "LCSC" "C434590"
-			(at 0 0 -90)
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -5397,9 +5172,9 @@
 			)
 		)
 		(path "/36da0556-aa60-4611-82e8-fc65f448e1fd")
-		(sheetname "Root")
-		(sheetfile "Drop_Gen_PCB.kicad_sch")
-		(attr smd)
+		(sheetname "/")
+		(sheetfile "DropGenPCB.kicad_sch")
+		(attr smd exclude_from_bom dnp)
 		(fp_line
 			(start 0.0762 20.4478)
 			(end 0.0762 17.7878)
@@ -5527,7 +5302,7 @@
 				(width 0.1)
 				(type default)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.SilkS")
 			(uuid "91740c18-2231-4f8e-b73b-7bdc372266e5")
 		)
@@ -5549,7 +5324,7 @@
 				(width 0.05)
 				(type default)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.CrtYd")
 			(uuid "782d96b5-2c4c-4102-8d71-637420863cf7")
 		)
@@ -5839,6 +5614,7 @@
 			(pintype "power_out")
 			(uuid "fed161dc-b10c-40d0-93ce-605e19203ce8")
 		)
+		(embedded_fonts no)
 	)
 	(footprint "Capacitor_SMD:C_Elec_6.3x7.7"
 		(layer "F.Cu")
@@ -5864,19 +5640,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_Elec_6.3x7.7"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "9b40e9b1-a571-4ddc-8645-655d75104b53")
-			(effects
-				(font
-					(size 1.27 1.27)
 					(thickness 0.15)
 				)
 			)
@@ -5935,8 +5698,8 @@
 		)
 		(property ki_fp_filters "CP_*")
 		(path "/4810b4bc-e453-46c1-9f7f-6a9dccfe5ea9")
-		(sheetname "Root")
-		(sheetfile "Drop_Gen_PCB.kicad_sch")
+		(sheetname "/")
+		(sheetfile "DropGenPCB.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start 3.41 3.41)
@@ -6225,7 +5988,7 @@
 				(width 0.1)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.Fab")
 			(uuid "bcd2da84-b7f8-482e-bb7d-c6322dfd0f92")
 		)
@@ -6243,7 +6006,7 @@
 		(pad "1" smd roundrect
 			(at -2.5375 0 180)
 			(size 3.325 1.6)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.15625)
 			(net 8 "+5V")
 			(pintype "passive")
@@ -6252,12 +6015,13 @@
 		(pad "2" smd roundrect
 			(at 2.5375 0 180)
 			(size 3.325 1.6)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.15625)
 			(net 1 "GND")
 			(pintype "passive")
 			(uuid "01adec6f-c2b5-482d-b081-c93d94b84bff")
 		)
+		(embedded_fonts no)
 		(model "${KICAD8_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_Elec_6.3x7.7.wrl"
 			(offset
 				(xyz 0 0 0)
@@ -6298,21 +6062,8 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_1210_3225Metric"
-			(at 0 0 -90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "0d0b0920-8092-4a74-bdd0-212960994540")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2308151448_Samwha-Capacitor-CS3225X7R106K500NRL_C2918502.pdf"
-			(at 0 0 -90)
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -6325,7 +6076,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 0 0 -90)
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -6338,7 +6089,7 @@
 			)
 		)
 		(property "Manufac. Part" "CS3225X7R106K500NRL"
-			(at 0 0 -90)
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -6351,7 +6102,7 @@
 			)
 		)
 		(property "LCSC" "C2918502"
-			(at 0 0 -90)
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -6365,8 +6116,8 @@
 		)
 		(property ki_fp_filters "C_*")
 		(path "/2aeae0fa-de54-4e6b-860a-06e960b717cd")
-		(sheetname "Root")
-		(sheetfile "Drop_Gen_PCB.kicad_sch")
+		(sheetname "/")
+		(sheetfile "DropGenPCB.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.711252 1.36)
@@ -6482,7 +6233,7 @@
 		(pad "1" smd roundrect
 			(at -1.475 0 270)
 			(size 1.15 2.7)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.217391)
 			(net 1 "GND")
 			(pintype "passive")
@@ -6491,12 +6242,13 @@
 		(pad "2" smd roundrect
 			(at 1.475 0 270)
 			(size 1.15 2.7)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.217391)
 			(net 30 "+30V")
 			(pintype "passive")
 			(uuid "dbae616a-cca7-4a8d-bc0d-1e06ff7218f8")
 		)
+		(embedded_fonts no)
 		(model "${KIPRJMOD}/DropGenPCB.pretty/input_capacitor.step"
 			(offset
 				(xyz 0 0 0.45)
@@ -6526,26 +6278,13 @@
 				)
 			)
 		)
-		(property "Value" "22uH "
+		(property "Value" "22uH"
 			(at 0 6.58 90)
 			(layer "F.Fab")
 			(uuid "8a04342e-9b13-4944-9f23-e0137c29900c")
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Footprint" "Inductor_SMD:L_Vishay_IHLP-4040"
-			(at 0 0 90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "ca9ade43-1fc6-4ee7-ac60-a0d3420229a1")
-			(effects
-				(font
-					(size 1.27 1.27)
 					(thickness 0.15)
 				)
 			)
@@ -6604,8 +6343,8 @@
 		)
 		(property ki_fp_filters "Choke_* *Coil* Inductor_* L_*")
 		(path "/68ddd630-1f4b-4a90-a06e-6033b7e30e70")
-		(sheetname "Root")
-		(sheetfile "Drop_Gen_PCB.kicad_sch")
+		(sheetname "/")
+		(sheetfile "DropGenPCB.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start 5.18 -5.18)
@@ -6761,7 +6500,7 @@
 		(pad "1" smd rect
 			(at -4.5075 0 90)
 			(size 3.175 4.95)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net 2 "/PH")
 			(pinfunction "1")
 			(pintype "passive")
@@ -6770,12 +6509,13 @@
 		(pad "2" smd rect
 			(at 4.5075 0 90)
 			(size 3.175 4.95)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net 8 "+5V")
 			(pinfunction "2")
 			(pintype "passive")
 			(uuid "75bc5b57-def3-4a9a-b9cd-e743b6f3049b")
 		)
+		(embedded_fonts no)
 		(model "${KIPRJMOD}/DropGenPCB.pretty/inductor.step"
 			(offset
 				(xyz 0 0 0)
@@ -6806,7 +6546,7 @@
 			)
 		)
 		(property "Value" "JST_3_pin"
-			(at -0.0762 14.7922 0)
+			(at -0.0866 11.5538 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(uuid "2daebfbb-c8e2-4a61-8d68-6b3b3fa7ebf2")
@@ -6817,20 +6557,7 @@
 				)
 			)
 		)
-		(property "Footprint" "DropGeneratorPCB:3_pin_jst"
-			(at -0.0762 13.7922 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "4f96e310-b15b-4527-b5d4-0793a046f282")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_JST-S3B-XH-SM4-TB-LF-SN_C161860.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C5306495.pdf?spm=wm.sxq.inf.ggs&lcsc_vid=QVBbUFwER1lfVAAAFVZbBQZRR1kPXlJeRQMPXlEARQAxVlNeQlZZUlZSQlRYUjsOAxUeFF5JWBYZEEoKFBINSQcJGk4NBhADEA4cHktRTlNADxALGw%3D%3D"
 			(at -0.0762 13.7922 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -6869,7 +6596,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C161860"
+		(property "LCSC" "C5306495"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -6883,8 +6610,8 @@
 			)
 		)
 		(path "/c407ba16-f0aa-47b7-a381-f701f30d5a91")
-		(sheetname "Root")
-		(sheetfile "Drop_Gen_PCB.kicad_sch")
+		(sheetname "/")
+		(sheetfile "DropGenPCB.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -6.3366 -0.5462)
@@ -7153,12 +6880,12 @@
 				(width 0.06)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.Fab")
 			(uuid "7a547cbb-4e86-4779-99a2-a59e552348f0")
 		)
 		(fp_text user "${REFERENCE}"
-			(at -0.0762 16.2922 0)
+			(at -0.0866 13.0538 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(uuid "51592d54-e693-42ab-b157-20ce727b6006")
@@ -7183,7 +6910,7 @@
 		(pad "1" smd rect
 			(at -2.5866 -0.5462)
 			(size 1.3 4.5)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net 7 "Signal")
 			(pinfunction "1")
 			(pintype "input")
@@ -7192,7 +6919,7 @@
 		(pad "2" smd rect
 			(at -0.0866 -0.5462)
 			(size 1.3 4.5)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net 1 "GND")
 			(pinfunction "2")
 			(pintype "input")
@@ -7201,7 +6928,7 @@
 		(pad "3" smd rect
 			(at 2.4134 -0.5462)
 			(size 1.3 4.5)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net 8 "+5V")
 			(pinfunction "3")
 			(pintype "input")
@@ -7210,7 +6937,7 @@
 		(pad "4" smd rect
 			(at -5.7866 6.2738)
 			(size 1.8 3.9)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net 1 "GND")
 			(pinfunction "4")
 			(pintype "input")
@@ -7219,12 +6946,13 @@
 		(pad "5" smd rect
 			(at 5.6134 6.2738)
 			(size 1.8 3.9)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net 1 "GND")
 			(pinfunction "5")
 			(pintype "input")
 			(uuid "2036db27-1b23-4aa4-859e-a38c8479250d")
 		)
+		(embedded_fonts no)
 		(model "${KIPRJMOD}/DropGenPCB.pretty/3_pin_jst.step"
 			(offset
 				(xyz 2.5 -4 0)
@@ -7266,20 +6994,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_DIN965_Pad"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "0b4f3bb6-0a3e-4027-b6bd-194e79ca9665")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
+		(property "Datasheet" "~"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -7307,8 +7022,8 @@
 		)
 		(property ki_fp_filters "MountingHole*Pad*")
 		(path "/c4f88bfa-c0ec-4811-8e4d-0b82e2f4073b")
-		(sheetname "Root")
-		(sheetfile "Drop_Gen_PCB.kicad_sch")
+		(sheetname "/")
+		(sheetfile "DropGenPCB.kicad_sch")
 		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
 			(center 0 0)
@@ -7317,7 +7032,7 @@
 				(width 0.15)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "Cmts.User")
 			(uuid "148605ca-2208-42c6-bc55-c1c09fda7924")
 		)
@@ -7328,7 +7043,7 @@
 				(width 0.05)
 				(type solid)
 			)
-			(fill none)
+			(fill no)
 			(layer "F.CrtYd")
 			(uuid "00f1fa90-160a-4dd8-8727-7cf015327a62")
 		)
@@ -7354,6 +7069,7 @@
 			(pintype "input")
 			(uuid "9bb43aed-9050-4dac-9308-6d74338a13fe")
 		)
+		(embedded_fonts no)
 	)
 	(footprint "Package_SO:TI_SO-PowerPAD-8_ThermalVias"
 		(layer "F.Cu")
@@ -7379,19 +7095,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Footprint" "Package_SO:TI_SO-PowerPAD-8_ThermalVias"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "e9b0c9c0-14b6-4619-b997-0b40535830dc")
-			(effects
-				(font
-					(size 1.27 1.27)
 					(thickness 0.15)
 				)
 			)
@@ -7449,8 +7152,8 @@
 			)
 		)
 		(path "/1ec631ac-b1d4-437b-b4e6-744853798f8f")
-		(sheetname "Root")
-		(sheetfile "Drop_Gen_PCB.kicad_sch")
+		(sheetname "/")
+		(sheetfile "DropGenPCB.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -2.075 2.575)
@@ -7480,7 +7183,7 @@
 				(width 0.12)
 				(type solid)
 			)
-			(fill solid)
+			(fill yes)
 			(layer "F.SilkS")
 			(uuid "62717539-4e3b-4096-805d-b89adb54c13c")
 		)
@@ -7588,7 +7291,7 @@
 		(pad "1" smd rect
 			(at -2.7 -1.905 180)
 			(size 1.55 0.6)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net 6 "/Boot")
 			(pinfunction "BOOT")
 			(pintype "input")
@@ -7597,7 +7300,7 @@
 		(pad "2" smd rect
 			(at -2.7 -0.635 180)
 			(size 1.55 0.6)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net 5 "unconnected-(U4-NC-Pad2)")
 			(pinfunction "NC")
 			(pintype "no_connect")
@@ -7606,7 +7309,7 @@
 		(pad "3" smd rect
 			(at -2.7 0.635 180)
 			(size 1.55 0.6)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net 4 "unconnected-(U4-NC-Pad3)")
 			(pinfunction "NC")
 			(pintype "no_connect")
@@ -7615,7 +7318,7 @@
 		(pad "4" smd rect
 			(at -2.7 1.905 180)
 			(size 1.55 0.6)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net 28 "/VSENSE")
 			(pinfunction "VSENSE")
 			(pintype "input")
@@ -7624,7 +7327,7 @@
 		(pad "5" smd rect
 			(at 2.7 1.905 180)
 			(size 1.55 0.6)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net 3 "/ENA")
 			(pinfunction "EN")
 			(pintype "input+no_connect")
@@ -7633,7 +7336,7 @@
 		(pad "6" smd rect
 			(at 2.7 0.635 180)
 			(size 1.55 0.6)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net 1 "GND")
 			(pinfunction "GND")
 			(pintype "power_in")
@@ -7642,7 +7345,7 @@
 		(pad "7" smd rect
 			(at 2.7 -0.635 180)
 			(size 1.55 0.6)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net 30 "+30V")
 			(pinfunction "VIN")
 			(pintype "power_in")
@@ -7651,7 +7354,7 @@
 		(pad "8" smd rect
 			(at 2.7 -1.905 180)
 			(size 1.55 0.6)
-			(layers "F.Cu" "F.Paste" "F.Mask")
+			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net 2 "/PH")
 			(pinfunction "PH")
 			(pintype "output")
@@ -7763,6 +7466,7 @@
 			(pintype "power_in")
 			(uuid "64137c43-85f8-4663-b9e3-e322fd79be58")
 		)
+		(embedded_fonts no)
 		(model "${KICAD8_3DMODEL_DIR}/Package_SO.3dshapes/HTSOP-8-1EP_3.9x4.9mm_Pitch1.27mm.wrl"
 			(offset
 				(xyz 0 0 0)
@@ -7858,6 +7562,154 @@
 		)
 		(layer "Edge.Cuts")
 		(uuid "f3ddef0b-092a-4ad2-ae07-13e683a46143")
+	)
+	(gr_text "-"
+		(at 141.1 155 0)
+		(layer "F.SilkS")
+		(uuid "136b53f7-7423-4835-ba23-7cbc99373ccd")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(gr_text "Power Supply"
+		(at 67.9 138.2 0)
+		(layer "F.SilkS")
+		(uuid "32ed7c5d-f856-49d9-be5f-735ec7016c09")
+		(effects
+			(font
+				(size 1.25 1.25)
+				(thickness 0.2)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "+"
+		(at 136.1 155 0)
+		(layer "F.SilkS")
+		(uuid "3b6a2c60-9ba3-45ae-bb0b-c44322caae22")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(gr_text "+"
+		(at 109.6 155.1 0)
+		(layer "F.SilkS")
+		(uuid "3cf56c6b-1ccf-4cec-a019-ceeabdd8bab9")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(gr_text "Camera"
+		(at 132.8 138.3 0)
+		(layer "F.SilkS")
+		(uuid "56f56e7b-8d85-47f9-a615-7631222d07a1")
+		(effects
+			(font
+				(size 1.25 1.25)
+				(thickness 0.2)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "-"
+		(at 83.2866 102.3366 0)
+		(layer "F.SilkS")
+		(uuid "57241117-9337-49f3-bc90-bfe767d2ae95")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(gr_text "+"
+		(at 88.138 102.235 0)
+		(layer "F.SilkS")
+		(uuid "80551733-38eb-433a-ac90-587dd2d6e38e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(gr_text "Motor"
+		(at 121.4 142.5 0)
+		(layer "F.SilkS")
+		(uuid "a9fdf522-026b-4919-bb08-f960e6e52419")
+		(effects
+			(font
+				(size 1.25 1.25)
+				(thickness 0.2)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "End-Stop"
+		(at 102.8 142.5 0)
+		(layer "F.SilkS")
+		(uuid "b79ca7bd-8045-4ca0-aff7-8cdc45154ecd")
+		(effects
+			(font
+				(size 1.25 1.25)
+				(thickness 0.2)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "-"
+		(at 95.9 155 0)
+		(layer "F.SilkS")
+		(uuid "bf401c0f-3873-4057-8be4-0a94afbe2601")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(gr_text "Piezo"
+		(at 89.7 138 0)
+		(layer "F.SilkS")
+		(uuid "c28a8df3-19ba-493c-bbd3-71dd63009f7e")
+		(effects
+			(font
+				(size 1.25 1.25)
+				(thickness 0.2)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "+"
+		(at 90.7 155 0)
+		(layer "F.SilkS")
+		(uuid "d646781a-b325-4723-8e37-ba54cf34872d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(gr_text "-"
+		(at 107.4 155 0)
+		(layer "F.SilkS")
+		(uuid "e7e46ae9-a96f-4420-9bb8-5804caac0dd1")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
 	)
 	(gr_text "-"
 		(at 141 152 0)
@@ -8032,154 +7884,6 @@
 				(thickness 0.2)
 			)
 			(justify left bottom mirror)
-		)
-	)
-	(gr_text "-"
-		(at 141.1 155 0)
-		(layer "F.SilkS")
-		(uuid "136b53f7-7423-4835-ba23-7cbc99373ccd")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-		)
-	)
-	(gr_text "Power Supply"
-		(at 67.9 138.2 0)
-		(layer "F.SilkS")
-		(uuid "32ed7c5d-f856-49d9-be5f-735ec7016c09")
-		(effects
-			(font
-				(size 1.25 1.25)
-				(thickness 0.2)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "+"
-		(at 136.1 155 0)
-		(layer "F.SilkS")
-		(uuid "3b6a2c60-9ba3-45ae-bb0b-c44322caae22")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-		)
-	)
-	(gr_text "+"
-		(at 109.6 155.1 0)
-		(layer "F.SilkS")
-		(uuid "3cf56c6b-1ccf-4cec-a019-ceeabdd8bab9")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-		)
-	)
-	(gr_text "Camera"
-		(at 132.8 138.3 0)
-		(layer "F.SilkS")
-		(uuid "56f56e7b-8d85-47f9-a615-7631222d07a1")
-		(effects
-			(font
-				(size 1.25 1.25)
-				(thickness 0.2)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "-"
-		(at 83.2866 102.3366 0)
-		(layer "F.SilkS")
-		(uuid "57241117-9337-49f3-bc90-bfe767d2ae95")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-		)
-	)
-	(gr_text "+"
-		(at 88.138 102.235 0)
-		(layer "F.SilkS")
-		(uuid "80551733-38eb-433a-ac90-587dd2d6e38e")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-		)
-	)
-	(gr_text "Motor"
-		(at 121.4 142.5 0)
-		(layer "F.SilkS")
-		(uuid "a9fdf522-026b-4919-bb08-f960e6e52419")
-		(effects
-			(font
-				(size 1.25 1.25)
-				(thickness 0.2)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "End-Stop"
-		(at 102.8 142.5 0)
-		(layer "F.SilkS")
-		(uuid "b79ca7bd-8045-4ca0-aff7-8cdc45154ecd")
-		(effects
-			(font
-				(size 1.25 1.25)
-				(thickness 0.2)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "-"
-		(at 95.9 155 0)
-		(layer "F.SilkS")
-		(uuid "bf401c0f-3873-4057-8be4-0a94afbe2601")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-		)
-	)
-	(gr_text "Piezo"
-		(at 89.7 138 0)
-		(layer "F.SilkS")
-		(uuid "c28a8df3-19ba-493c-bbd3-71dd63009f7e")
-		(effects
-			(font
-				(size 1.25 1.25)
-				(thickness 0.2)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "+"
-		(at 90.7 155 0)
-		(layer "F.SilkS")
-		(uuid "d646781a-b325-4723-8e37-ba54cf34872d")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-		)
-	)
-	(gr_text "-"
-		(at 107.4 155 0)
-		(layer "F.SilkS")
-		(uuid "e7e46ae9-a96f-4420-9bb8-5804caac0dd1")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
 		)
 	)
 	(segment
@@ -11273,4 +10977,5 @@
 			)
 		)
 	)
+	(embedded_fonts no)
 )

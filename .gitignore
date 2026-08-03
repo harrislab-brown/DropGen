@@ -4,3 +4,6 @@
 .vscode/launch.json
 .vscode/ipch
 *.DS_Store
+CAD/DropGen_PCB/~DropGenPCB.kicad_sch.lck
+CAD/DropGen_PCB/~_autosave-DropGenPCB.kicad_pcb.lck
+CAD/DropGen_PCB/\#auto_saved_files\#

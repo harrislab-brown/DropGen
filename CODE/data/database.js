@@ -1,22 +1,33 @@
-var Socket;
-var dropsLeft = 0;
+var Socket = null;
 var timerID = null;
-var intervalID = null;
-const defaultValues = ['1000', '500', '100', '1', '15'];
-const elementIds = ['plsw', 'dpdel', 'dpnum', 'trvl', 'cmdel', 'resPos'];
+var reconnectID = null;
+const defaultValues = ['1.0', '1', '15', '90', '0'];
+const elementIds = ['opdel', 'trvl', 'cmdel', 'opang', 'clang', 'resPos'];
 
-window.onload = function(event){
+window.onload = function(event){connect();}
+
+// The controller drops every socket when it reboots or the network hiccups.
+// Reconnect on our own so the page keeps working without a manual refresh.
+function connect(){
   Socket = new WebSocket('ws://' + window.location.hostname + ':81/');
-  Socket.onopen = function(event) {};
+  Socket.onopen    = function(event) {setLinkState(true)};
   Socket.onmessage = function(event) {receive_data(event)};
-  Socket.onerror = function(error) {};
+  Socket.onclose   = function(event) {setLinkState(false); scheduleReconnect()};
+  Socket.onerror   = function(error) {Socket.close()};
 }
 
-function updateDrops(){
-  var dropNum = document.getElementById('dpnum').innerHTML;
-  dropNum = parseInt(dropNum, 10) - 1;
-  dropsLeft--;
-  console.log(dropsLeft);
+function scheduleReconnect(){
+  if(reconnectID !== null) return;
+  reconnectID = setTimeout(function() {reconnectID = null; connect();}, 2000);
+}
+
+function setLinkState(isUp){
+  var link = document.getElementById('link');
+  if(link) link.innerHTML = isUp ? '' : 'Disconnected - reconnecting...';
+}
+
+function isLinkUp(){
+  return Socket !== null && Socket.readyState === WebSocket.OPEN;
 }
 
 function calculateTime(isGo){
@@ -53,8 +64,8 @@ function sendBtnData(btn){
 }
 
 
-function send_data(isGo = false) {
-  let result = "";
+function send_data(isGo = false, save = false) {
+  let result = save ? "s" : "";
     for (let i = 1 ; i <= defaultValues.length ; i++) { 
       let value = document.getElementById(`textbox${i}`).value;
       result += "p" + (/\d/.test(value) ? value : defaultValues[i - 1]);
@@ -69,8 +80,22 @@ function send_data(isGo = false) {
     } else {
       result += "p" + prevResMotPos;
     }
+    if(!isLinkUp()){
+      setLinkState(false);
+      scheduleReconnect();
+      return false;
+    }
     Socket.send(result);
+    return true;
   }
+
+// Push the current settings and ask the controller to write them to NVS
+function save_settings(){
+  if(!send_data(false, true)) return;
+  var btn = document.getElementById('save');
+  btn.innerHTML = 'Saved!';
+  setTimeout(function() {btn.innerHTML = 'Save Settings';}, 1500);
+}
 
 function receive_data(event) {
   
@@ -81,9 +106,9 @@ function receive_data(event) {
   var toggleGen = document.getElementById('toggle-gen');
   if (myArray.length >= 2) {
     
-    // Update Generator Toggle Data
+    // Update Drop Button Data
     const isGenOn = myArray[0] === '1';
-    toggleGen.innerHTML = isGenOn ? 'On' : 'Off';
+    toggleGen.innerHTML = isGenOn ? 'Iris Open' : 'Drop';
     toggleGen.style.backgroundColor = isGenOn ? '#B4C424' : '#E34234';
     toggleGen.style.boxShadow = isGenOn ? ' 0 9px #90913c' : ' 0 9px #A42A04';
     wrapper.classList.toggle("start", isGenOn);
@@ -100,17 +125,4 @@ function receive_data(event) {
       document.getElementById(id).innerHTML = myArray[index + 2];
     });
   }
-  const dropDelay = document.getElementById('dpdel').innerHTML;
-  if(toggleGen.innerHTML === 'On') {
-    if(intervalID === null){
-      dropsLeft = myArray[3];
-      setInterval(updateDrops, parseInt((dropDelay) + 10) );
-    }
-  } else if (dropsLeft <= 0 || toggleGen.innerHTML === 'Off'){
-    if(intervalID !== null){
-      clearInterval(intervalID);
-      intervalID = null;
-    }
-  }
-  
 };

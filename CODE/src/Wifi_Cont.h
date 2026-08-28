@@ -11,6 +11,7 @@ class WifiClass{
   
   // Functions that are used by other controllers
     void update(bool);
+    void requestUpdate();
     void wfSetup(Motor &, Generator& generator);
     void wfRun(Motor &);
 

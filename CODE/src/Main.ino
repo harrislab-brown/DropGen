@@ -27,7 +27,7 @@ void setup(){
   DropGen.dgSetup();
   MotorCont.motorSetup();
   WiFiCont.wfSetup(MotorCont, DropGen);
-  xTaskCreatePinnedToCore(codeTask1, "DropGen", 2048, NULL, 1, NULL, pro_cpu);
+  xTaskCreatePinnedToCore(codeTask1, "DropGen", 4096, NULL, 1, NULL, pro_cpu);
   xTaskCreatePinnedToCore(codeTask2, "Controls", 10240, NULL, 1, NULL, app_cpu);
 }
 

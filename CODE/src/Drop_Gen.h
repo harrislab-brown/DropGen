@@ -11,6 +11,7 @@ class Generator{
   private:
     void camera();
     void generate();
+    void writeAngle(int);
 };
 
 #endif

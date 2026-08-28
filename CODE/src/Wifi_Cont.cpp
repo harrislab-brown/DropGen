@@ -19,6 +19,8 @@ bool sendData = false;
 // Define the global instance of WifiClass
 WifiClass wifiCont;
 
+extern Preferences pref;   // Persistent settings store, created in Main.ino
+
 // Main page for server and captures values sent by server
 void WifiClass::wfRun(Motor& motor) {
   server.handleClient();                         
@@ -38,21 +40,27 @@ void webSocketEvent(byte num, WStype_t type, uint8_t* payload, size_t length) {
       break;
     case WStype_TEXT:
       if (length > 0) {
-        if(payload[0] == 'p'){
+        // A leading 's' means apply these values and write them to NVS,
+        // a leading 'p' means apply them for this session only
+        bool save = payload[0] == 's';
+        if(payload[0] == 'p' || save){
           char* token = nullptr;
+          char* data  = save ? (char*)payload + 1 : (char*)payload;
 
-          token = strtok((char*)payload, "p");             // Pulse width 
-          param.pulseWidth = atoi(token);
-          token = strtok(NULL, "p");                       // Drop delay
-          param.dropDelay = atoi(token);
-          token = strtok(NULL, "p");                       // Drop number
-          param.dropNum = atoi(token);
+          token = strtok(data, "p");                       // Open delay
+          param.openDelay = atof(token);
           token = strtok(NULL, "p");                       // Motor travel length
           param.travelLength = atof(token);
           token = strtok(NULL, "p");                       // Camera delay
           param.cameraDelay = atoi(token);
+          token = strtok(NULL, "p");                       // Servo open angle
+          param.openAngle = atoi(token);
+          token = strtok(NULL, "p");                       // Servo closed angle
+          param.closedAngle = atoi(token);
           token = strtok(NULL, "p");                       // Reservoir motor position
           param.resMotPos = atof(token);
+
+          if(save) param.saveParameters(pref);
         }
         sendData = true;
       }
@@ -91,16 +99,21 @@ void WifiClass::update(bool textUpdate){
     std::ostringstream oss;
     oss << (param.drop ? "1" : "0")
         << (param.camera ? " 1" : " 0")
-        << ' ' << param.pulseWidth
-        << ' ' << param.dropDelay
-        << ' ' << param.dropNum
+        << ' ' << param.openDelay
         << ' ' << param.travelLength
         << ' ' << param.cameraDelay
+        << ' ' << param.openAngle
+        << ' ' << param.closedAngle
         << ' ' << param.resMotPos;
     webSocket.broadcastTXT(oss.str().c_str());
     server.send(200, "text/plain", "");
   } else server.send(200, "text/plain", "");
   sendData = false;
+}
+
+// Ask wfRun to broadcast the current state from the server core
+void WifiClass::requestUpdate(){
+  sendData = true;
 }
 
 // Sets up the links for requested functions and files 
@@ -123,7 +136,7 @@ void WifiClass::setupServer(Motor& motor, Generator& generator){
   server.on("/calib",    [&motor, this]() {motor.calibrate(); update(true);});
   server.on("/lock",     [&motor, this]() {motor.lock(); update(true);});
   server.on("/returnto", [&motor, this]() {motor.return_to(); update(true);});
-  server.on("/dropgen",  [&motor, this]() {param.drop = !param.drop; update(true);});
+  server.on("/dropgen",  [&motor, this]() {param.drop = true; update(true);});
   server.on("/camera",   [&motor, this]() {param.camera = !param.camera; update(true);});
 }
 

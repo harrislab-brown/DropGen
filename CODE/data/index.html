@@ -37,9 +37,9 @@
           <button id="regular" onclick='sendBtnData("/returnto")' style="margin-top: 5px; margin-left: 15px; padding: 15px 56px; margin-bottom: 10px; ">ReturnTo</button>
         </div>
         <div style='margin-top: 5px' class="dr-container">
-          <label>Drop Gen:</label>
+          <label>Drop:</label>
           <div class="wrapper"><div class="water"><div class="drop"></div></div></div>
-          <button id='toggle-gen' onclick='sendBtnData("/dropgen")'>Off</button>
+          <button id='toggle-gen' onclick='sendBtnData("/dropgen")'>Drop</button>
         </div>
         <div class="dr-container" style="margin-top: 2px;">
           <label>Camera:</label>
@@ -56,40 +56,44 @@
     <span>
       <span2>
         <div class="dr-container">
-          <label for='textbox1'>Pulse Width (&#xB5;s):</label>
-          <input type='number' id='textbox1' value=''>
+          <label for='textbox1'>Open Delay (s):</label>
+          <input type='number' step='0.1' id='textbox1' value=''>
         </div>
-        <div><span1 id='plsw'>-</span1></div>
+        <div><span1 id='opdel'>-</span1></div>
       </span2>
       <span2>
         <div class="dr-container">
-          <label for='textbox3'>Drop Interval (ms):</label>
+          <label for='textbox2'>Travel Length (mm):</label>
           <input type='number' id='textbox2' value=''>
-        </div>
-        <div><span1 id='dpdel'>-</span1></div>
-      </span2>
-      <span2>
-        <div class="dr-container">
-          <label for='textbox4'>Drop Number:</label>
-          <input type='number' id='textbox3' value=''>
-        </div>
-        <div><span1 id='dpnum'>-</span1></div>
-      </span2>
-      <span2>
-        <div class="dr-container">
-          <label for='textbox5'>Travel Length (mm):</label>
-          <input type='number' id='textbox4' value=''>
         </div>
         <div><span1 id='trvl'>-</span1></div>
       </span2>
       <span2>
         <div class="dr-container">
-          <label for='textbox2'>Camera Delay (ms):</label>
-          <input type='number' id='textbox5' value=''>
+          <label for='textbox3'>Camera Delay (ms):</label>
+          <input type='number' id='textbox3' value=''>
         </div>
         <div><span1 id='cmdel'>-</span1></div>
       </span2>
-      <button1 onclick='send_data()'>Submit</button1>
+      <span2>
+        <div class="dr-container">
+          <label for='textbox4'>Open Angle (&#xB0;):</label>
+          <input type='number' min='0' max='180' id='textbox4' value=''>
+        </div>
+        <div><span1 id='opang'>-</span1></div>
+      </span2>
+      <span2>
+        <div class="dr-container">
+          <label for='textbox5'>Closed Angle (&#xB0;):</label>
+          <input type='number' min='0' max='180' id='textbox5' value=''>
+        </div>
+        <div><span1 id='clang'>-</span1></div>
+      </span2>
+      <div class="dr-container btn-row">
+        <button1 onclick='send_data()'>Submit</button1>
+        <button1 id='save' onclick='save_settings()'>Save Settings</button1>
+      </div>
+      <div id='link' class='link-status'></div>
     </span>
     <script src="./database.js"></script>
   </body>

@@ -166,6 +166,23 @@ button1 {
     justify-content: space-between;
     align-items: center;
 }
+/* Shown only while the websocket is down */
+.link-status {
+    font-family: 'Arial Narrow';
+    font-weight: bold;
+    color: #E34234;
+    text-align: center;
+    min-height: 16px;
+}
+
+/* Submit / Save Settings sit side by side and share the row evenly */
+.btn-row {gap: 10px;}
+.btn-row button1 {
+    flex: 1;
+    padding-left: 0;
+    padding-right: 0;
+}
+
 /*       Widget        */
 /*    Camera widget    */
 
